@@ -1,0 +1,352 @@
+body {
+    background-color: #90acaf;
+    color: #ebe1d2;
+    font-family: "AR Pcrystal RGothic JIS", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, sans-serif;
+    padding: 0 20%;
+    box-sizing: border-box;
+}
+
+/* ハンバーガーメニューボタン */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #ebe1d2;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* メニュー開いた時のアニメーション */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* メニュー */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(144, 172, 175, 0.95);
+    transition: right 0.3s ease;
+    z-index: 999;
+    padding-top: 80px;
+}
+
+.menu.active {
+    right: 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(235, 225, 210, 0.2);
+}
+
+.menu ul li a {
+    color: #ebe1d2;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+    transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #fff;
+}
+
+/* ヘッダーのスタイル */
+header {
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+.header-name {
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+.header-line {
+    margin: 10px auto;
+    width: 30%;
+    max-width: 300px;
+    border: none;
+    border-top: 1px solid #ebe1d2;
+}
+
+.header-title {
+    color: #ebe1d2;
+    margin: 10px auto 0;
+    font-size: 2em;
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* テキスト要素にアニメーション */
+p {
+    animation: fadeIn 1.2s ease-in;
+}
+
+.contents-text {
+    animation: fadeIn 1.5s ease-in;
+}
+
+.contents-nav {
+    animation: fadeIn 1.8s ease-in;
+}
+
+.contents-nav ul li {
+    animation: fadeIn 2s ease-in;
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 768px) {
+    .header-name {
+        font-size: 0.9em;
+    }
+
+    .header-line {
+        width: 60%;
+    }
+
+    .header-title {
+        font-size: 1.5em;
+    }
+
+    .menu {
+        width: 250px;
+    }
+
+    .menu ul li a {
+        font-size: 1em;
+    }
+
+    /* img5を非表示 */
+    .img5 {
+        display: none;
+    }
+
+    /* contentsテキストを上に配置 */
+    .contents-text {
+        margin-top: 20px !important;
+        margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
+        font-size: 8vw !important;
+    }
+
+    /* 目次を下に配置 */
+    .contents-nav {
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        text-align: center !important;
+    }
+
+    .contents-nav ul li {
+        margin: 15px 0 !important;
+    }
+
+    .contents-nav ul li a {
+        font-size: 4vw !important;
+    }
+
+    /* 画像の幅調整 */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* iframe調整 */
+    iframe {
+        width: 100% !important;
+        height: 400px !important;
+    }
+
+    /* 3枚の画像を縦並びに */
+    div[style*="display: flex"] {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    div[style*="display: flex"] img {
+        width: 30% !important;
+        margin-bottom: 20px;
+    }
+
+    /* こんにちは！を非表示 */
+    .hello-text {
+        display: none !important;
+    }
+
+    /* 画像7を非表示 */
+    .img7 {
+        display: none !important;
+    }
+
+    /* profileセクションのテキストを小さく */
+    .profile-text {
+        font-size: 3vw !important;
+        margin-left: 0 !important;
+        margin-top: 10px !important;
+        text-align: center;
+    }
+
+    .profile-description {
+        margin-left: 50% !important;
+        transform: translateX(-50%) !important;
+        text-align: center !important;
+        font-size: 3vw !important;
+        margin-top: 15px !important;
+        padding: 0 5%;
+        width: 90%;
+    }
+
+    /* skillセクションの調整 */
+    .skill-title {
+        margin-top: 30px !important;
+        margin-left: 0 !important;
+        text-align: center;
+        font-size: 6vw !important;
+        color: #ebe1d2 !important;
+    }
+
+    .skill-list {
+        margin-left: 10% !important;
+        margin-top: 70px !important;
+        font-size: 3vw !important;
+        color: #ebe1d2 !important;
+    }
+
+    /* worksセクションをスマホ版で下に */
+    #works {
+        margin-top: 160% !important;
+    }
+}
+
+/* 大画面対応 - 目次のフォントサイズを固定 */
+@media screen and (min-width: 1024px) {
+    body {
+        padding: 0 20%;
+    }
+
+    .contents-nav ul li a {
+        font-size: 1.5em !important;
+    }
+
+    /* skillセクションの配置を固定 */
+    .skill-title {
+        font-size: 6rem !important;
+        top: 8% !important;
+        left: 38% !important;
+    }
+
+    .skill-list {
+        font-size: 2.2rem !important;
+        top: 25% !important;
+        left: 18% !important;
+        max-width: 60%;
+    }
+
+    /* 各セクションタイトルのサイズを固定 */
+    #profile,
+    #works,
+    #workflow,
+    #pricing {
+        font-size: 4rem !important;
+    }
+
+    /* worksセクションをスマホ版で下に */
+    #works {
+        margin-top: 10% !important;
+    }
+
+    /* contentsテキストのサイズ固定 */
+    .contents-text {
+        font-size: 5rem !important;
+    }
+
+    /* profileセクションのテキストサイズ固定 */
+    .profile-text {
+        font-size: 1.5rem !important;
+    }
+
+    .profile-hiragana {
+        font-size: 1.2rem !important;
+        margin-top: 0% !important;
+        position: relative !important;
+        top: -20px !important;
+        margin-left: 50% !important;
+    }
+
+    .profile-kanji {
+        font-size: 2rem !important;
+        margin-left: 50% !important;
+    }
+
+    .profile-description {
+        font-size: 1.3rem !important;
+        max-width: 600px;
+        margin-left: 42% !important;
+        margin-top: 20px !important;
+    }
+
+    .hello-text {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* 中間サイズ(タブレット)対応 */
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    body {
+        padding: 0 15%;
+    }
+
+    .contents-nav {
+        margin-left: 60% !important;
+        margin-top: -80% !important;
+    }
+
+    .contents-nav ul li a {
+        font-size: 2vw !important;
+    }
+}
